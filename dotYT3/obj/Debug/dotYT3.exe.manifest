@@ -49,19 +49,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>HQKEdqn/2HW9INRzCqoU5/7HxmJBueN6XV37JHmdJk8=</dsig:DigestValue>
+        <dsig:DigestValue>qLjq4X4haPthnhYjRqWbf8iWmZFKaOFEOet9iDdXnOw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="libvideo.dll" size="47616">
-      <assemblyIdentity name="libvideo" version="3.0.2.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="libvideo.dll" size="49152">
+      <assemblyIdentity name="libvideo" version="3.0.9.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iY4nF6+HNh2h9P261itsIC/ngwUa3M8kuvcmqfxSqeA=</dsig:DigestValue>
+        <dsig:DigestValue>Sau8oYF1w/rBWminnLFB6i6jDZSClqr5fV5MwQ66UGc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

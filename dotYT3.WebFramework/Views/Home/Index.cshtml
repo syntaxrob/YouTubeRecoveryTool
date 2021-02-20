@@ -1,0 +1,82 @@
+﻿@model dotYT3.WebFramework.Models.HomeIndexViewModel
+
+@{
+    ViewBag.Title = "Recover";
+}
+
+<div id="warning">
+    <h2 style="text-align: center">Warning</h2>
+    <p>
+        This tool may not be used to download video or audio content from YouTube you do not either own or have specific permission to access. This is designed to be a recovery tool <strong>only</strong>
+    </p>
+    <p id="continue" onclick="showForm()" class="btn btn-danger">Continue</p>
+    <p id="leave" onclick="leavePage()" class="btn btn-warning">Leave</p>
+</div>
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="container" id="mainForm" style="display: none">
+        <div class="row">
+            <div class="col-md-12">
+                @Html.TextBoxFor(model => model.DestinationFolder, new { placeholder = "D:\\Audio", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DestinationFolder)
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.TextBoxFor(model => model.YoutubeUrl, new { placeholder = "Youtube URL", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.YoutubeUrl)
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="btn-group" data-toggle="buttons" style="padding-bottom:10px">
+                <label class="btn btn-info">
+                    @Html.RadioButtonFor(model => model.RecoverySelection, "audio") Audio
+                </label>
+
+                <label class="btn btn-info">
+                    @Html.RadioButtonFor(model => model.RecoverySelection, "video") Video
+                </label>
+            </div>
+
+            @Html.ValidationMessageFor(model => model.RecoverySelection)
+        </div>
+
+        <p>
+            <button type="submit" id="btn" name="btn" class="btn btn-primary" onclick="loading()" value="Submit">Recover</button>
+        </p>
+    </div>
+}
+
+<div class="center-center" id="spinner" style="display: none">
+    <img src="~/Content/spinner.gif" />
+</div>
+
+<script>
+    function showForm() {
+        $('#warning').hide();
+        $('#mainForm').show();
+    }
+
+    function leavePage() {
+        window.location.replace("https://google.com");
+    }
+
+    function loading() {
+        $('#spinner').show();
+        $('#mainForm').css({
+            'opacity': "0.5",
+            'pointer-events': 'none'
+        });
+
+    }
+</script>
